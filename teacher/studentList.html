@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список студентов</title>
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="icon" type="image/ico" href="../img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="headerSection">
+            <div class="headerBlock">
+                <div class="logoBlock">
+                    <div class="logo"><img src="../img/logo.svg" alt="Logo"></div>
+                    <div class="company">Wall-e-doll</div>
+                </div>
+                <div class="infoBlock">
+                    <nav>
+                        <ul>
+                            <li class="active">
+                                <a href="studentList.html">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <path d="M22.5 3.75001V3.75001C23.197 3.75001 23.5455 3.75001 23.8353 3.80765C25.0253 4.04437 25.9556 4.97467 26.1924 6.16474C26.25 6.45454 26.25 6.80303 26.25 7.50001L26.25 10.25C26.25 10.7214 26.25 10.9571 26.1036 11.1036C25.9571 11.25 25.7214 11.25 25.25 11.25L18.75 11.25M22.5 3.75001V3.75001C21.803 3.75001 21.4545 3.75001 21.1647 3.80765C19.9747 4.04437 19.0444 4.97467 18.8076 6.16474C18.75 6.45454 18.75 6.80303 18.75 7.50001L18.75 11.25M22.5 3.75001L7.75 3.75001C5.86438 3.75001 4.92157 3.75001 4.33579 4.3358C3.75 4.92158 3.75 5.86439 3.75 7.75001L3.75 26.25L7.5 25L11.25 26.25L15 25L18.75 26.25L18.75 11.25" stroke="#007FFA" stroke-width="2"/>
+                                    <path d="M8.75 8.75L13.75 8.75" stroke="#007FFA" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M10 13.75H8.75" stroke="#007FFA" stroke-width="2" stroke-linecap="round"/>
+                                    <path d="M8.75 18.75L12.5 18.75" stroke="#007FFA" stroke-width="2" stroke-linecap="round"/>
+                                  </svg>
+                                  <span>Cписок студентов</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="createLesson.html">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <circle cx="15" cy="15" r="11.25" stroke="#0B0B0B" stroke-width="2"/>
+                                    <path d="M15 18.75L15 11.25" stroke="#0B0B0B" stroke-width="2" stroke-linecap="square"/>
+                                    <path d="M18.75 15L11.25 15" stroke="#0B0B0B" stroke-width="2" stroke-linecap="square"/>
+                                  </svg>
+                                  <span>Создание уроков</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="seeAnswers.html">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <circle cx="15" cy="15" r="11.25" stroke="#0B0B0B" stroke-width="2"/>
+                                    <circle cx="15" cy="22.5" r="0.625" fill="#0B0B0B" stroke="#0B0B0B"/>
+                                    <path d="M15 20V18.2264C15 17.0461 15.7553 15.9982 16.875 15.625V15.625C17.9947 15.2518 18.75 14.2039 18.75 13.0236V12.3821C18.75 10.3762 17.1238 8.75 15.1179 8.75H15C12.9289 8.75 11.25 10.4289 11.25 12.5V12.5" stroke="#0B0B0B" stroke-width="2"/>
+                                  </svg>
+                                  <span>Просмотр ответов</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pivotTable.html">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                    <path d="M5.75 21.25H11.25C11.947 21.25 12.2955 21.25 12.5853 21.3076C13.7753 21.5444 14.7056 22.4747 14.9424 23.6647C15 23.9545 15 24.303 15 25V11C15 8.17157 15 6.75736 14.1213 5.87868C13.2426 5 11.8284 5 9 5H5.75C4.80719 5 4.33579 5 4.04289 5.29289C3.75 5.58579 3.75 6.05719 3.75 7V19.25C3.75 20.1928 3.75 20.6642 4.04289 20.9571C4.33579 21.25 4.80719 21.25 5.75 21.25Z" stroke="#0B0B0B" stroke-width="2"/>
+                                    <path d="M24.25 21.25H18.75C18.053 21.25 17.7045 21.25 17.4147 21.3076C16.2247 21.5444 15.2944 22.4747 15.0576 23.6647C15 23.9545 15 24.303 15 25V11C15 8.17157 15 6.75736 15.8787 5.87868C16.7574 5 18.1716 5 21 5H24.25C25.1928 5 25.6642 5 25.9571 5.29289C26.25 5.58579 26.25 6.05719 26.25 7V19.25C26.25 20.1928 26.25 20.6642 25.9571 20.9571C25.6642 21.25 25.1928 21.25 24.25 21.25Z" stroke="#0B0B0B" stroke-width="2"/>
+                                  </svg>
+                                  <span>Сводная таблица</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="logOut">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <path d="M2.5 15L1.71913 14.3753L1.21938 15L1.71913 15.6247L2.5 15ZM13.75 16C14.3023 16 14.75 15.5523 14.75 15C14.75 14.4477 14.3023 14 13.75 14V16ZM6.71913 8.1253L1.71913 14.3753L3.28087 15.6247L8.28087 9.3747L6.71913 8.1253ZM1.71913 15.6247L6.71913 21.8747L8.28087 20.6253L3.28087 14.3753L1.71913 15.6247ZM2.5 16H13.75V14H2.5V16Z" fill="#0B0B0B"/>
+                            <path d="M12.5 10.1649V8.38851C12.5 6.77017 12.5 5.961 12.974 5.4015C13.4479 4.84201 14.2461 4.70899 15.8424 4.44293L20.5136 3.6644C23.7567 3.12388 25.3782 2.85363 26.4391 3.75232C27.5 4.65102 27.5 6.29493 27.5 9.58276V20.4172C27.5 23.7051 27.5 25.349 26.4391 26.2477C25.3782 27.1464 23.7567 26.8761 20.5136 26.3356L15.8424 25.5571C14.2461 25.291 13.4479 25.158 12.974 24.5985C12.5 24.039 12.5 23.2298 12.5 21.6115V20.0825" stroke="#0B0B0B" stroke-width="2"/>
+                        </svg>
+                        <a href="../forms/form_log-teac.html">Выйти из аккаунта</a>
+                    </div>    
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <div class="mainSection content">
+            <div class="nameMain">Список студентов
+                <div class="palka"></div>
+            </div>
+            <div class="nameSub">Компьютерные сети</div>
+            <section class="studentsListSection">
+                <div class="studentsList">
+                    <div class="listNameBlock">
+                        <div class="listName">ФИО Студента</div>
+                        <div class="listName">Группа</div>
+                    </div>
+                    <section class="infoBlock">
+                        <div class="info">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info white">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info white">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info white">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info white">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                        <div class="info white">
+                            <div class="infoName">Семёнов Киррил Андреевич</div>
+                            <div class="infoName">ИСиП-21</div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

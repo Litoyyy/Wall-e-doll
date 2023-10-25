@@ -1,0 +1,657 @@
+$Black: #0B0B0B;
+$Blue: #007FFA;
+$White: #FFFFFF;
+$Gray: #626262;
+$BlueOpacity: rgba(0, 127, 250, 0.2);
+
+:root {
+    --border: 30px;
+    --smallBorder: 15px;
+    --fz16: 16px;
+    --fz18: 18px;
+    --fz24: 24px;
+    --fz20: 20px;
+    --fz30: 30px;
+    --defg: 30px;
+    --smallg: 15px;
+}
+
+@mixin df_ac {
+    display: flex;
+    align-items: center;
+}
+
+@mixin df_fdc {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin df_fdc_ac {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin df_fdc_jcc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin df_ac_jcc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin big_text {
+    font-size: var(--fz30);
+    font-weight: 700;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        transition: all .3s;
+        text-shadow: 3px 4px 4px rgb(11, 11, 11, .25);
+    }
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    &:hover {
+        transition: all .3s;
+        text-shadow: 3px 4px 4px rgb(11, 11, 11, .5);
+    }
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+input {
+    @include df_ac;
+    padding: 20px;
+    border: 2px solid $Gray;
+    border-radius: var(--smallBorder);
+    transition: all .1s;
+    &::placeholder {
+        color: $Gray;
+    }
+    &:focus {
+        color: $Black;
+        border: 2px solid $Blue;
+        outline: none;
+    }
+    &:hover {
+        border: 2px solid $Blue;
+    }
+}
+
+textarea {
+    padding: 20px;
+    border: 2px solid $Gray;
+    border-radius: var(--smallBorder);
+    transition: all .3s;
+    height: 100%;
+    &:focus {
+        color: $Black;
+        outline: none;
+        border: 2px solid $Blue;
+    }
+    &:hover {
+        border: 2px solid $Blue;
+    }
+}
+
+button.blueBtn {
+    @include df_ac;
+    padding: 16px 36px;
+    color: $White;
+    background-color: $Blue;
+    border-radius: var(--smallBorder);
+    font-size: var(--fz20);
+    transition: all .3s;
+    &:hover {
+        background-color: rgb(0, 127, 250, .8);
+    }
+}
+
+.content {
+    margin-left: 350px;
+    padding: 60px;
+    @include df_fdc;
+}
+
+.nameMain {
+    color: $Black;
+    @include big_text;
+    @include df_ac;
+    gap: var(--smallg);
+    .palka {
+        height: 3px;
+        width: 60px;
+        background-color: $Blue;
+    }
+}
+
+.nameSub {
+    @include df_ac;
+    justify-content: space-between;
+    color: $Gray;
+    font-size: var(--fz24);
+    align-self: stretch;
+    .redactList {
+        color: $Blue;
+        font-size: var(--fz20);
+        font-weight: 600;
+        @include df_ac;
+        gap: var(--smallg);
+        img {
+            height: 30px;
+            width: 30px;
+        }
+    }
+}
+
+.taskAnsBlock .chooseFileBlock,
+.createLessonSection .chooseFileBlock {
+    cursor: pointer;
+    @include df_ac_jcc;
+    align-self: stretch;
+    border: .5px solid $Black;
+    a {
+        @include df_fdc_ac;
+        gap: 5px;
+        color: $Black;
+        font-size: var(--fz20);
+    }
+}
+
+.headerSection {
+    position: fixed;
+    height: 100vh;
+    z-index: 50;
+    box-shadow: 5px 0px 25px 0px rgba(0, 0, 0, 0.25);
+    .headerBlock {
+        @include df_fdc;
+        align-self: stretch;
+        width: 350px;
+        height: 100%;
+        gap: 60px;
+        padding: 30px;
+        .logoBlock {
+            gap: var(--smallg);
+            @include df_ac;
+            .logo {
+                width: 90px;
+                height: 90px;
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+            .company {
+                flex: 1 0 0;
+                color: $Blue;
+                font-size: var(--fz30);
+                font-weight: 700;
+            }
+        }
+        .infoBlock {
+            @include df_fdc;
+            justify-content: space-between;
+            height: 100%;
+            ul {
+                @include df_fdc_jcc;
+                gap: var(--fz10);
+                li {
+                    @include df_ac;
+                    gap: 10px;
+                    &.active {
+                        border-radius: var(--smallBorder);
+                        background-color: $BlueOpacity;
+                        a {
+                            flex: 1 0 0;
+                            color: $Blue;
+                        }
+                    }
+                    a {
+                        display: flex;
+                        align-items: center;
+                        flex: 1 0 0;
+                        color: $Black;
+                        padding: 15px
+                    }
+                }
+            }
+            .logOut {
+                @include df_ac;
+                gap: 10px;
+                a {
+                    color: $Black;
+                }
+            }
+        }
+    }
+}
+
+.mainSection {
+    row-gap: 30px;
+    .profileSection {
+        @include df_ac;
+        gap: 25px;
+        .avatar {
+            @include df_ac_jcc;
+            width: 150px;
+            border-radius: 50%;
+            img {
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .infoBlock {
+            @include df_fdc;
+            font-size: var(--fz20);
+            gap: 20px;
+            width: 100%;
+            .studentNameBlock {
+                @include df_ac;
+                justify-content: space-between;
+                gap: 10px;
+                .studentName[contentEditable] {
+                    box-shadow: 0 0 0 1px $Blue;
+                }
+            }
+            .editName {
+                @include df_ac;
+                span {
+                    @include df_ac;
+                    height: 24px;
+                    color: $Blue;
+                    font-size: var(--fz20);
+                }
+                span[contentEditable] {
+                    box-shadow: 0 0 0 1px $Blue;
+                }
+                .editFill {
+                    height: 24px;
+                    width: 24px;
+                    @include df_ac_jcc;
+                    img {
+                        object-fit: contain;
+                        height: 100%;
+                        width: 100%;
+                    }
+                }    
+            }
+            .studentGroup {
+                align-self: stretch;
+            }
+            
+        }
+    }
+    .detailedInfoSection,
+                .coursesInfoSection {
+                    @include df_fdc;
+                    gap: var(--defg);
+                    padding: 20px;
+                    border: 1px solid $Gray;
+                    color: $Black;
+                    .sectionName {
+                        @include df_ac;
+                        justify-content: space-between;
+                        .mainText {
+                            @include big_text;
+                        }
+                        button {
+                            color: $Blue;
+                            font-size: var(--fz24);
+                            font-weight: 600;
+                        }
+                    }
+                    .infoBlock {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: var(--defg);
+                        .item {
+                            @include df_fdc;
+                            gap: var(--defg);
+                            min-width: 320px;
+                            .information {
+                                @include df_fdc;
+                                align-self: stretch;
+                                gap: 12px;
+                                .mainText {
+                                    align-self: stretch;
+                                    color: $Gray;
+                                    font-size: var(--fz20);
+                                    a {
+                                        text-decoration: underline;
+                                        align-self: stretch;
+                                    }
+                                }
+                                .subText {
+                                    align-self: stretch;
+                                    font-size: var(--fz18);
+                                }
+                                .subText[contentEditable] {
+                                    box-shadow: 0 0 0 1px red;
+                                }
+                            }
+                        }
+                    }
+                }
+}
+
+.mainSection {
+    .coursesInfoSection {
+        .sectionName {
+            @include df_fdc;
+            align-items: flex-start;
+            gap: 10px;
+            .nameSub {
+                font-size: var(--fz20);
+            }
+        }
+        .coursesList {
+            ul {
+                @include df_fdc;
+                gap: 10px;
+                li {
+                    a {
+                        text-decoration: underline;
+                        font-size: var(--fz18);
+                        color: $Blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.myCoursesList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 300px);
+    gap: 20px;
+    text-shadow: 3px 3px 3px $Black;
+    font-size: var(--fz18);
+    .item {
+        position: relative;
+        @include df_fdc;
+        justify-content: space-between;
+        border-radius: var(--border);
+        background-image: url("../img/bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 20px 30px;
+        color: $White;
+        cursor: pointer;
+        &:hover {
+            &::before {
+                background-color: rgb(11, 11, 11, .5);
+                box-shadow: 0 0 25px 3px $Blue;
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all .3s;
+            background-color: rgb(11, 11, 11, .35);
+            border-radius: var(--border);
+        }
+        .itemName {
+            text-align: center;
+            align-self: stretch;
+            z-index: 1;
+        }
+        .itemInfo {
+            @include df_fdc;
+            z-index: 2;
+            span {
+                color: $Blue;
+            }
+            .itemGroup {
+                @include df_ac;
+                gap: 5px;
+            }
+            .itemTeacher {
+                @include df_fdc;
+            }
+        }
+    }
+}
+
+.taskSection,
+.answerSection {
+    @include df_fdc;
+    gap: var(--defg);
+    .taskInfoBlock,
+    .answerInfoBlock {
+        font-size: var(--fz20);
+        @include df_fdc;
+        .item {
+            height: 100px;
+            @include df_ac;
+            gap: 50px;
+            padding: 0 15px;
+            align-self: stretch;
+            background-color: $BlueOpacity;
+            &.white {
+                background-color: $White;
+            }
+            .leftText {
+                color: $Black;
+                width: 300px;
+            }
+            .rightText {
+                color: $Gray;
+            }
+        }
+    }
+    .taskAnsBlock {
+        @include df_fdc_ac;
+        padding: 20px;
+        gap: var(--defg);
+        .chooseFileBlock {
+            height: 405px
+        }
+        .answerButton {
+            @include df_fdc_ac;
+            gap: var(--smallg);
+            .notLoaded {
+                color: $Black;
+                font-size: var(--fz18);
+            }
+        }
+    }
+}
+
+.studentsList {
+    .listNameBlock {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .infoBlock {
+        .info {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.studentsListSection,
+.listStudentSection,
+.listTeacherSection,
+.listCourseSection {
+    .studentsList,
+    .listStudentBlock,
+    .listTeacherBlock,
+    .listCourseBlock {
+        @include df_fdc;
+        gap: var(--defg);
+        color: $Black;
+        .listNameBlock {
+            display: grid;
+            .listName {
+                @include big_text;
+            }
+        }
+        .infoBlock {
+            @include df_fdc;
+            .info {
+                display: grid;
+                font-size: var(--fz18);
+                background-color: $BlueOpacity;
+                &.white {
+                    background-color: $White;
+                }
+                .infoName {
+                    @include df_ac;
+                    padding: 15px 10px;
+                    align-self: stretch;
+                }
+            }
+        }
+    }
+}
+
+.createLessonSection {
+    @include df_fdc;
+    gap: var(--defg);
+    .createLessonBlock {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        .lessonInfoBlock {
+            @include df_fdc;
+            gap: 10px;
+            input {}
+        }
+        .lessonDescription {
+            @include df_fdc;
+            input {
+                flex: 1 0 0;
+            }
+        }
+    }
+    .chooseFileBlock {
+        height: 500px;
+    }
+    .addInCourse {
+        @include df_ac;
+        align-self: stretch;
+        justify-content: center;
+    }
+}
+
+.listStudentSection {
+    .listStudentBlock {
+        .listNameBlock {
+            grid-template-columns: 1fr 1fr 2fr;
+        }
+        .infoBlock {
+            .info {
+                grid-template-columns: 1fr 1fr 2fr;
+            }
+        }
+    }
+}
+
+.listTeacherSection {
+    .listTeacherBlock {
+        .listNameBlock {
+            grid-template-columns: repeat(3, 1fr);
+            .listName[contentEditable]{
+                box-shadow: 0 0 0 1px $Blue;
+            }
+        }
+        .infoBlock {
+            .info {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .add {
+                @include df_ac_jcc;
+                padding: 10px 15px;
+                .addBtn {
+                    @include df_ac_jcc;
+                    padding: 5px;
+                    background-color: $Gray;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+.listCourseSection {
+    .listCourseBlock {
+        .infoBlock {
+            .info {
+                @include df_fdc;
+                gap: 15px;
+                padding: 15px;
+                .infoCourse {
+                    @include df_ac;
+                    gap: 10px;
+                    span {
+                        color: $Blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tableInfo {
+    tr {
+        @include df_ac_jcc;
+        width: 100%;
+        th {
+            @include df_ac_jcc;
+            align-self: stretch;
+            padding: 30px 0;
+            flex: 1 0 0;
+            border: 1px solid $Blue;
+            color: $Blue;
+        }
+        td {
+            cursor: pointer;
+            padding: 30px 0;
+            @include df_ac_jcc;
+            align-self: stretch;
+            flex: 1 0 0;
+            border: 1px solid $Gray;
+            button {
+                color: $Gray;
+                @include df_ac_jcc;
+            }
+            &.first {
+                border: 1px solid $Blue;
+                color: $Blue;
+            }
+        }
+    }
+}

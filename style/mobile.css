@@ -1,0 +1,204 @@
+@media screen and (max-width: 1600px) {
+    header {
+        position: relative;
+    }
+    .headerSection {
+        width: 350px;
+        left: -320px;
+        transition: all .5s;
+        background-color: #FFFFFF;
+    }
+    .headerSection .headerBlock {
+        position: absolute;
+        z-index: 9999999;
+    }
+    .headerSection:hover  {
+        left: 0;
+    }
+    .content {
+        margin-left: 10px;
+    }
+}
+@media screen and (max-width: 1700px) {
+    .myCoursesList {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 1200px) {
+    .myCoursesList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .myCoursesList .item {
+        height: 300px;
+    }
+    .tableInfo tr td button {
+        width: 100px;
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .headerSection {
+        width: 100%;
+        height: 200px;
+        position: sticky;
+        left: 0;
+    }
+    .headerSection .headerBlock {
+        gap: 10px;
+        width: 100%;
+    }
+    .headerSection .headerBlock .logoBlock .logo {
+        height: 50px;
+        width: 50px;
+    }
+    .headerSection .headerBlock .infoBlock {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+    }
+    .headerSection .headerBlock .infoBlock nav ul {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    .listStudentSection .listStudentBlock .listNameBlock .listName {
+        font-size: 18px
+    }
+    .listStudentSection .listStudentBlock .infoBlock .info .infoName {
+        font-size: 16px ;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .tableInfo tr td {
+        padding: 15px 0;
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 900px) {
+    .tableInfo tr td button {
+        font-size: 0;
+        width: 24px; 
+    }
+    .tableInfo tr th {
+        font-size: 14px;
+    }
+    .tableInfo tr td {
+        padding: 15px 0;
+    }
+    .listTeacherSection .listTeacherBlock {
+        gap: 15px;
+    }
+    .listTeacherSection .listTeacherBlock .listNameBlock .listName {
+        font-size: 20px;
+    }
+    .listStudentSection .listStudentBlock {
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .content {
+        row-gap: 20px;
+    }
+    :root {
+        --fz30: 24px;
+        --fz24: 20px;
+        --fz20: 16px;
+        --fz18: 14px;
+    }
+    .headerSection {
+        height: 230px;
+    }
+    .headerSection .headerBlock .infoBlock ul li.active {
+        padding: 5px 0;
+    }
+    .headerSection .headerBlock .infoBlock ul li a {
+        padding: 5px 15px;
+        gap: 5px;
+    }
+    .headerSection .headerBlock .infoBlock {
+        align-items: flex-start;
+    }
+    .headerSection .headerBlock .infoBlock nav ul {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+    .headerSection .headerBlock .infoBlock .logOut {
+        padding: 10px;
+    }
+    .myCoursesList {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .myCoursesList .item {
+        height: 250px;
+        align-items: center;
+    }
+    .myCoursesList .item .itemInfo .itemTeacher  {
+        flex-direction: row;
+    }
+    .mainSection .detailedInfoSection .infoBlock, .mainSection .coursesInfoSection .infoBlock {
+        flex-direction: column;
+    }
+    .mainSection .detailedInfoSection .infoBlock .item, .mainSection .coursesInfoSection .infoBlock .item {
+        gap: 15px;
+        min-width: 150px;
+    }
+    .mainSection .detailedInfoSection, .mainSection .coursesInfoSection {
+        gap: 20px;
+    }
+    .createLessonSection .createLessonBlock {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    input {
+        padding: 10px;
+    }
+    textarea {
+        padding: 10px
+    }
+    .createLessonSection .chooseFileBlock {
+        height: 300px;
+    }
+    .answerSection .answerInfoBlock .item .leftText {
+        width: 150px;
+    }
+    .answerSection .answerInfoBlock .item .rightText {
+        width: 130px;
+    }
+    .answerSection .answerInfoBlock .item {
+        justify-content: space-between;
+    }
+    .tableInfo tr td {
+        font-size: 12px;
+    }
+    .nameSub {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 650px) {
+    .headerSection {
+        height: 255px;
+    }
+    :root {
+        --fz30: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mainSection .detailedInfoSection .sectionName, .mainSection .coursesInfoSection .sectionName {
+        align-items: flex-start;
+    }
+    .myCoursesList .item .itemInfo .itemTeacher  {
+        flex-direction: column;
+    }
+    .mainSection .detailedInfoSection .sectionName {
+        flex-direction: column;
+    }
+    .mainSection .profileSection {
+        flex-direction: column;
+    }
+    .listTeacherSection .listTeacherBlock .listNameBlock .listName {
+        font-size: 16px;
+    }
+}
+

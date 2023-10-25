@@ -1,0 +1,779 @@
+:root {
+  --border: 30px;
+  --smallBorder: 15px;
+  --fz16: 16px;
+  --fz18: 18px;
+  --fz24: 24px;
+  --fz20: 20px;
+  --fz30: 30px;
+  --defg: 30px;
+  --smallg: 15px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  transition: all 0.3s;
+  text-shadow: 3px 4px 4px rgba(11, 11, 11, 0.25);
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+button:hover {
+  transition: all 0.3s;
+  text-shadow: 3px 4px 4px rgba(11, 11, 11, 0.5);
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+}
+
+input {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid #626262;
+  border-radius: var(--smallBorder);
+  transition: all 0.1s;
+}
+input::-moz-placeholder {
+  color: #626262;
+}
+input::placeholder {
+  color: #626262;
+}
+input:focus {
+  color: #0B0B0B;
+  border: 2px solid #007FFA;
+  outline: none;
+}
+input:hover {
+  border: 2px solid #007FFA;
+}
+
+textarea {
+  padding: 20px;
+  border: 2px solid #626262;
+  border-radius: var(--smallBorder);
+  transition: all 0.3s;
+  height: 100%;
+}
+textarea:focus {
+  color: #0B0B0B;
+  outline: none;
+  border: 2px solid #007FFA;
+}
+textarea:hover {
+  border: 2px solid #007FFA;
+}
+
+button.blueBtn {
+  display: flex;
+  align-items: center;
+  padding: 16px 36px;
+  color: #FFFFFF;
+  background-color: #007FFA;
+  border-radius: var(--smallBorder);
+  font-size: var(--fz20);
+  transition: all 0.3s;
+}
+button.blueBtn:hover {
+  background-color: rgba(0, 127, 250, 0.8);
+}
+
+.content {
+  margin-left: 350px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nameMain {
+  color: #0B0B0B;
+  font-size: var(--fz30);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: var(--smallg);
+}
+.nameMain .palka {
+  height: 3px;
+  width: 60px;
+  background-color: #007FFA;
+}
+
+.nameSub {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #626262;
+  font-size: var(--fz24);
+  align-self: stretch;
+}
+.nameSub .redactList {
+  color: #007FFA;
+  font-size: var(--fz20);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--smallg);
+}
+.nameSub .redactList img {
+  height: 30px;
+  width: 30px;
+}
+
+.taskAnsBlock .chooseFileBlock,
+.createLessonSection .chooseFileBlock {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  border: 0.5px solid #0B0B0B;
+}
+.taskAnsBlock .chooseFileBlock a,
+.createLessonSection .chooseFileBlock a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #0B0B0B;
+  font-size: var(--fz20);
+}
+
+.headerSection {
+  position: fixed;
+  height: 100vh;
+  z-index: 50;
+  box-shadow: 5px 0px 25px 0px rgba(0, 0, 0, 0.25);
+}
+.headerSection .headerBlock {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  width: 350px;
+  height: 100%;
+  gap: 60px;
+  padding: 30px;
+}
+.headerSection .headerBlock .logoBlock {
+  gap: var(--smallg);
+  display: flex;
+  align-items: center;
+}
+.headerSection .headerBlock .logoBlock .logo {
+  width: 90px;
+  height: 90px;
+}
+.headerSection .headerBlock .logoBlock .logo img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.headerSection .headerBlock .logoBlock .company {
+  flex: 1 0 0;
+  color: #007FFA;
+  font-size: var(--fz30);
+  font-weight: 700;
+}
+.headerSection .headerBlock .infoBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.headerSection .headerBlock .infoBlock ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--fz10);
+}
+.headerSection .headerBlock .infoBlock ul li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.headerSection .headerBlock .infoBlock ul li.active {
+  border-radius: var(--smallBorder);
+  background-color: rgba(0, 127, 250, 0.2);
+}
+.headerSection .headerBlock .infoBlock ul li.active a {
+  flex: 1 0 0;
+  color: #007FFA;
+}
+.headerSection .headerBlock .infoBlock ul li a {
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  color: #0B0B0B;
+  padding: 15px;
+}
+.headerSection .headerBlock .infoBlock .logOut {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.headerSection .headerBlock .infoBlock .logOut a {
+  color: #0B0B0B;
+}
+
+.mainSection {
+  row-gap: 30px;
+}
+.mainSection .profileSection {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.mainSection .profileSection .avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  border-radius: 50%;
+}
+.mainSection .profileSection .avatar img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.mainSection .profileSection .infoBlock {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fz20);
+  gap: 20px;
+  width: 100%;
+}
+.mainSection .profileSection .infoBlock .studentNameBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.mainSection .profileSection .infoBlock .studentNameBlock .studentName[contentEditable] {
+  box-shadow: 0 0 0 1px #007FFA;
+}
+.mainSection .profileSection .infoBlock .editName {
+  display: flex;
+  align-items: center;
+}
+.mainSection .profileSection .infoBlock .editName span {
+  display: flex;
+  align-items: center;
+  height: 24px;
+  color: #007FFA;
+  font-size: var(--fz20);
+}
+.mainSection .profileSection .infoBlock .editName span[contentEditable] {
+  box-shadow: 0 0 0 1px #007FFA;
+}
+.mainSection .profileSection .infoBlock .editName .editFill {
+  height: 24px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainSection .profileSection .infoBlock .editName .editFill img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 100%;
+  width: 100%;
+}
+.mainSection .profileSection .infoBlock .studentGroup {
+  align-self: stretch;
+}
+.mainSection .detailedInfoSection,
+.mainSection .coursesInfoSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--defg);
+  padding: 20px;
+  border: 1px solid #626262;
+  color: #0B0B0B;
+}
+.mainSection .detailedInfoSection .sectionName,
+.mainSection .coursesInfoSection .sectionName {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainSection .detailedInfoSection .sectionName .mainText,
+.mainSection .coursesInfoSection .sectionName .mainText {
+  font-size: var(--fz30);
+  font-weight: 700;
+}
+.mainSection .detailedInfoSection .sectionName button,
+.mainSection .coursesInfoSection .sectionName button {
+  color: #007FFA;
+  font-size: var(--fz24);
+  font-weight: 600;
+}
+.mainSection .detailedInfoSection .infoBlock,
+.mainSection .coursesInfoSection .infoBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--defg);
+}
+.mainSection .detailedInfoSection .infoBlock .item,
+.mainSection .coursesInfoSection .infoBlock .item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--defg);
+  min-width: 320px;
+}
+.mainSection .detailedInfoSection .infoBlock .item .information,
+.mainSection .coursesInfoSection .infoBlock .item .information {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  gap: 12px;
+}
+.mainSection .detailedInfoSection .infoBlock .item .information .mainText,
+.mainSection .coursesInfoSection .infoBlock .item .information .mainText {
+  align-self: stretch;
+  color: #626262;
+  font-size: var(--fz20);
+}
+.mainSection .detailedInfoSection .infoBlock .item .information .mainText a,
+.mainSection .coursesInfoSection .infoBlock .item .information .mainText a {
+  text-decoration: underline;
+  align-self: stretch;
+}
+.mainSection .detailedInfoSection .infoBlock .item .information .subText,
+.mainSection .coursesInfoSection .infoBlock .item .information .subText {
+  align-self: stretch;
+  font-size: var(--fz18);
+}
+.mainSection .detailedInfoSection .infoBlock .item .information .subText[contentEditable],
+.mainSection .coursesInfoSection .infoBlock .item .information .subText[contentEditable] {
+  box-shadow: 0 0 0 1px red;
+}
+
+.mainSection .coursesInfoSection .sectionName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.mainSection .coursesInfoSection .sectionName .nameSub {
+  font-size: var(--fz20);
+}
+.mainSection .coursesInfoSection .coursesList ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mainSection .coursesInfoSection .coursesList ul li a {
+  text-decoration: underline;
+  font-size: var(--fz18);
+  color: #007FFA;
+}
+
+.myCoursesList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 300px);
+  gap: 20px;
+  text-shadow: 3px 3px 3px #0B0B0B;
+  font-size: var(--fz18);
+}
+.myCoursesList .item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: var(--border);
+  background-image: url("../img/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px 30px;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+.myCoursesList .item:hover::before {
+  background-color: rgba(11, 11, 11, 0.5);
+  box-shadow: 0 0 25px 3px #007FFA;
+}
+.myCoursesList .item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: all 0.3s;
+  background-color: rgba(11, 11, 11, 0.35);
+  border-radius: var(--border);
+}
+.myCoursesList .item .itemName {
+  text-align: center;
+  align-self: stretch;
+  z-index: 1;
+}
+.myCoursesList .item .itemInfo {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+.myCoursesList .item .itemInfo span {
+  color: #007FFA;
+}
+.myCoursesList .item .itemInfo .itemGroup {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.myCoursesList .item .itemInfo .itemTeacher {
+  display: flex;
+  flex-direction: column;
+}
+
+.taskSection,
+.answerSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--defg);
+}
+.taskSection .taskInfoBlock,
+.taskSection .answerInfoBlock,
+.answerSection .taskInfoBlock,
+.answerSection .answerInfoBlock {
+  font-size: var(--fz20);
+  display: flex;
+  flex-direction: column;
+}
+.taskSection .taskInfoBlock .item,
+.taskSection .answerInfoBlock .item,
+.answerSection .taskInfoBlock .item,
+.answerSection .answerInfoBlock .item {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 0 15px;
+  align-self: stretch;
+  background-color: rgba(0, 127, 250, 0.2);
+}
+.taskSection .taskInfoBlock .item.white,
+.taskSection .answerInfoBlock .item.white,
+.answerSection .taskInfoBlock .item.white,
+.answerSection .answerInfoBlock .item.white {
+  background-color: #FFFFFF;
+}
+.taskSection .taskInfoBlock .item .leftText,
+.taskSection .answerInfoBlock .item .leftText,
+.answerSection .taskInfoBlock .item .leftText,
+.answerSection .answerInfoBlock .item .leftText {
+  color: #0B0B0B;
+  width: 300px;
+}
+.taskSection .taskInfoBlock .item .rightText,
+.taskSection .answerInfoBlock .item .rightText,
+.answerSection .taskInfoBlock .item .rightText,
+.answerSection .answerInfoBlock .item .rightText {
+  color: #626262;
+}
+.taskSection .taskAnsBlock,
+.answerSection .taskAnsBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  gap: var(--defg);
+}
+.taskSection .taskAnsBlock .chooseFileBlock,
+.answerSection .taskAnsBlock .chooseFileBlock {
+  height: 405px;
+}
+.taskSection .taskAnsBlock .answerButton,
+.answerSection .taskAnsBlock .answerButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--smallg);
+}
+.taskSection .taskAnsBlock .answerButton .notLoaded,
+.answerSection .taskAnsBlock .answerButton .notLoaded {
+  color: #0B0B0B;
+  font-size: var(--fz18);
+}
+
+.studentsList .listNameBlock {
+  grid-template-columns: repeat(2, 1fr);
+}
+.studentsList .infoBlock .info {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.studentsListSection .studentsList,
+.studentsListSection .listStudentBlock,
+.studentsListSection .listTeacherBlock,
+.studentsListSection .listCourseBlock,
+.listStudentSection .studentsList,
+.listStudentSection .listStudentBlock,
+.listStudentSection .listTeacherBlock,
+.listStudentSection .listCourseBlock,
+.listTeacherSection .studentsList,
+.listTeacherSection .listStudentBlock,
+.listTeacherSection .listTeacherBlock,
+.listTeacherSection .listCourseBlock,
+.listCourseSection .studentsList,
+.listCourseSection .listStudentBlock,
+.listCourseSection .listTeacherBlock,
+.listCourseSection .listCourseBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--defg);
+  color: #0B0B0B;
+}
+.studentsListSection .studentsList .listNameBlock,
+.studentsListSection .listStudentBlock .listNameBlock,
+.studentsListSection .listTeacherBlock .listNameBlock,
+.studentsListSection .listCourseBlock .listNameBlock,
+.listStudentSection .studentsList .listNameBlock,
+.listStudentSection .listStudentBlock .listNameBlock,
+.listStudentSection .listTeacherBlock .listNameBlock,
+.listStudentSection .listCourseBlock .listNameBlock,
+.listTeacherSection .studentsList .listNameBlock,
+.listTeacherSection .listStudentBlock .listNameBlock,
+.listTeacherSection .listTeacherBlock .listNameBlock,
+.listTeacherSection .listCourseBlock .listNameBlock,
+.listCourseSection .studentsList .listNameBlock,
+.listCourseSection .listStudentBlock .listNameBlock,
+.listCourseSection .listTeacherBlock .listNameBlock,
+.listCourseSection .listCourseBlock .listNameBlock {
+  display: grid;
+}
+.studentsListSection .studentsList .listNameBlock .listName,
+.studentsListSection .listStudentBlock .listNameBlock .listName,
+.studentsListSection .listTeacherBlock .listNameBlock .listName,
+.studentsListSection .listCourseBlock .listNameBlock .listName,
+.listStudentSection .studentsList .listNameBlock .listName,
+.listStudentSection .listStudentBlock .listNameBlock .listName,
+.listStudentSection .listTeacherBlock .listNameBlock .listName,
+.listStudentSection .listCourseBlock .listNameBlock .listName,
+.listTeacherSection .studentsList .listNameBlock .listName,
+.listTeacherSection .listStudentBlock .listNameBlock .listName,
+.listTeacherSection .listTeacherBlock .listNameBlock .listName,
+.listTeacherSection .listCourseBlock .listNameBlock .listName,
+.listCourseSection .studentsList .listNameBlock .listName,
+.listCourseSection .listStudentBlock .listNameBlock .listName,
+.listCourseSection .listTeacherBlock .listNameBlock .listName,
+.listCourseSection .listCourseBlock .listNameBlock .listName {
+  font-size: var(--fz30);
+  font-weight: 700;
+}
+.studentsListSection .studentsList .infoBlock,
+.studentsListSection .listStudentBlock .infoBlock,
+.studentsListSection .listTeacherBlock .infoBlock,
+.studentsListSection .listCourseBlock .infoBlock,
+.listStudentSection .studentsList .infoBlock,
+.listStudentSection .listStudentBlock .infoBlock,
+.listStudentSection .listTeacherBlock .infoBlock,
+.listStudentSection .listCourseBlock .infoBlock,
+.listTeacherSection .studentsList .infoBlock,
+.listTeacherSection .listStudentBlock .infoBlock,
+.listTeacherSection .listTeacherBlock .infoBlock,
+.listTeacherSection .listCourseBlock .infoBlock,
+.listCourseSection .studentsList .infoBlock,
+.listCourseSection .listStudentBlock .infoBlock,
+.listCourseSection .listTeacherBlock .infoBlock,
+.listCourseSection .listCourseBlock .infoBlock {
+  display: flex;
+  flex-direction: column;
+}
+.studentsListSection .studentsList .infoBlock .info,
+.studentsListSection .listStudentBlock .infoBlock .info,
+.studentsListSection .listTeacherBlock .infoBlock .info,
+.studentsListSection .listCourseBlock .infoBlock .info,
+.listStudentSection .studentsList .infoBlock .info,
+.listStudentSection .listStudentBlock .infoBlock .info,
+.listStudentSection .listTeacherBlock .infoBlock .info,
+.listStudentSection .listCourseBlock .infoBlock .info,
+.listTeacherSection .studentsList .infoBlock .info,
+.listTeacherSection .listStudentBlock .infoBlock .info,
+.listTeacherSection .listTeacherBlock .infoBlock .info,
+.listTeacherSection .listCourseBlock .infoBlock .info,
+.listCourseSection .studentsList .infoBlock .info,
+.listCourseSection .listStudentBlock .infoBlock .info,
+.listCourseSection .listTeacherBlock .infoBlock .info,
+.listCourseSection .listCourseBlock .infoBlock .info {
+  display: grid;
+  font-size: var(--fz18);
+  background-color: rgba(0, 127, 250, 0.2);
+}
+.studentsListSection .studentsList .infoBlock .info.white,
+.studentsListSection .listStudentBlock .infoBlock .info.white,
+.studentsListSection .listTeacherBlock .infoBlock .info.white,
+.studentsListSection .listCourseBlock .infoBlock .info.white,
+.listStudentSection .studentsList .infoBlock .info.white,
+.listStudentSection .listStudentBlock .infoBlock .info.white,
+.listStudentSection .listTeacherBlock .infoBlock .info.white,
+.listStudentSection .listCourseBlock .infoBlock .info.white,
+.listTeacherSection .studentsList .infoBlock .info.white,
+.listTeacherSection .listStudentBlock .infoBlock .info.white,
+.listTeacherSection .listTeacherBlock .infoBlock .info.white,
+.listTeacherSection .listCourseBlock .infoBlock .info.white,
+.listCourseSection .studentsList .infoBlock .info.white,
+.listCourseSection .listStudentBlock .infoBlock .info.white,
+.listCourseSection .listTeacherBlock .infoBlock .info.white,
+.listCourseSection .listCourseBlock .infoBlock .info.white {
+  background-color: #FFFFFF;
+}
+.studentsListSection .studentsList .infoBlock .info .infoName,
+.studentsListSection .listStudentBlock .infoBlock .info .infoName,
+.studentsListSection .listTeacherBlock .infoBlock .info .infoName,
+.studentsListSection .listCourseBlock .infoBlock .info .infoName,
+.listStudentSection .studentsList .infoBlock .info .infoName,
+.listStudentSection .listStudentBlock .infoBlock .info .infoName,
+.listStudentSection .listTeacherBlock .infoBlock .info .infoName,
+.listStudentSection .listCourseBlock .infoBlock .info .infoName,
+.listTeacherSection .studentsList .infoBlock .info .infoName,
+.listTeacherSection .listStudentBlock .infoBlock .info .infoName,
+.listTeacherSection .listTeacherBlock .infoBlock .info .infoName,
+.listTeacherSection .listCourseBlock .infoBlock .info .infoName,
+.listCourseSection .studentsList .infoBlock .info .infoName,
+.listCourseSection .listStudentBlock .infoBlock .info .infoName,
+.listCourseSection .listTeacherBlock .infoBlock .info .infoName,
+.listCourseSection .listCourseBlock .infoBlock .info .infoName {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  align-self: stretch;
+}
+
+.createLessonSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--defg);
+}
+.createLessonSection .createLessonBlock {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.createLessonSection .createLessonBlock .lessonInfoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.createLessonSection .createLessonBlock .lessonDescription {
+  display: flex;
+  flex-direction: column;
+}
+.createLessonSection .createLessonBlock .lessonDescription input {
+  flex: 1 0 0;
+}
+.createLessonSection .chooseFileBlock {
+  height: 500px;
+}
+.createLessonSection .addInCourse {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;
+}
+
+.listStudentSection .listStudentBlock .listNameBlock {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+.listStudentSection .listStudentBlock .infoBlock .info {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
+.listTeacherSection .listTeacherBlock .listNameBlock {
+  grid-template-columns: repeat(3, 1fr);
+}
+.listTeacherSection .listTeacherBlock .listNameBlock .listName[contentEditable] {
+  box-shadow: 0 0 0 1px #007FFA;
+}
+.listTeacherSection .listTeacherBlock .infoBlock .info {
+  grid-template-columns: repeat(3, 1fr);
+}
+.listTeacherSection .listTeacherBlock .infoBlock .add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+}
+.listTeacherSection .listTeacherBlock .infoBlock .add .addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  background-color: #626262;
+  border-radius: 5px;
+}
+
+.listCourseSection .listCourseBlock .infoBlock .info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+.listCourseSection .listCourseBlock .infoBlock .info .infoCourse {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.listCourseSection .listCourseBlock .infoBlock .info .infoCourse span {
+  color: #007FFA;
+}
+
+.tableInfo tr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.tableInfo tr th {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  padding: 30px 0;
+  flex: 1 0 0;
+  border: 1px solid #007FFA;
+  color: #007FFA;
+}
+.tableInfo tr td {
+  cursor: pointer;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  flex: 1 0 0;
+  border: 1px solid #626262;
+}
+.tableInfo tr td button {
+  color: #626262;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tableInfo tr td.first {
+  border: 1px solid #007FFA;
+  color: #007FFA;
+}/*# sourceMappingURL=style.css.map */

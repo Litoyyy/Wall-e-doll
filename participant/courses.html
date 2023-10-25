@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои курсы</title>
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="icon" type="image/ico" href="../img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <section class="headerSection">
+            <div class="headerBlock">
+                <div class="logoBlock">
+                    <div class="logo"><img src="../img/logo.svg" alt="Logo"></div>
+                    <div class="company">Wall-e-doll</div>
+                </div>
+                <div class="infoBlock">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="profile.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <circle cx="15" cy="12.5" r="3.75" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round"/>
+                                        <circle cx="15" cy="15" r="11.25" stroke="#0B0B0B" stroke-width="2"/>
+                                        <path d="M22.2256 23.533C22.3846 23.4458 22.4597 23.2569 22.3925 23.0885C21.9105 21.8806 20.982 20.8168 19.7268 20.0415C18.3707 19.204 16.7093 18.75 15 18.75C13.2908 18.75 11.6293 19.204 10.2732 20.0415C9.01805 20.8168 8.0895 21.8806 7.60748 23.0885C7.54029 23.2569 7.61545 23.4458 7.77435 23.533C12.2746 26.0037 17.7254 26.0037 22.2256 23.533Z" fill="#0B0B0B"/>
+                                    </svg>
+                                    <span>Личный профиль</span>
+                                </a>
+                            </li>
+                            <li class="active">
+                                <a href="courses.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M25 15V22.25C25 24.1356 25 25.0784 24.4142 25.6642C23.8284 26.25 22.8856 26.25 21 26.25H8.125C8.00894 26.25 7.95091 26.25 7.90184 26.2484C6.322 26.1967 5.05332 24.928 5.00161 23.3482C5 23.2991 5 23.2411 5 23.125V23.125C5 23.0089 5 22.9509 5.00161 22.9018C5.05332 21.322 6.322 20.0533 7.90184 20.0016C7.95091 20 8.00894 20 8.125 20H21C22.8856 20 23.8284 20 24.4142 19.4142C25 18.8284 25 17.8856 25 16V7.75C25 5.86438 25 4.92157 24.4142 4.33579C23.8284 3.75 22.8856 3.75 21 3.75H9C7.11438 3.75 6.17157 3.75 5.58579 4.33579C5 4.92157 5 5.86438 5 7.75V23.125" stroke="#007FFA" stroke-width="2"/>
+                                        <path d="M11.25 10L18.75 10" stroke="#007FFA" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>Курсы</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="submittingTask.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                                        <path d="M11.25 16.25L18.75 16.25" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M11.25 11.25L16.25 11.25" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M11.25 21.25L16.25 21.25" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M23.75 16.25V20.25C23.75 23.0784 23.75 24.4926 22.8713 25.3713C21.9926 26.25 20.5784 26.25 17.75 26.25H12.25C9.42157 26.25 8.00736 26.25 7.12868 25.3713C6.25 24.4926 6.25 23.0784 6.25 20.25V9.75C6.25 6.92157 6.25 5.50736 7.12868 4.62868C8.00736 3.75 9.42157 3.75 12.25 3.75H13.75" stroke="#0B0B0B" stroke-width="2"/>
+                                        <path d="M22.5 3.75L22.5 11.25" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round"/>
+                                        <path d="M26.25 7.5L18.75 7.5" stroke="#0B0B0B" stroke-width="2" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>Отправка задания</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="logOut">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                            <path d="M2.5 15L1.71913 14.3753L1.21938 15L1.71913 15.6247L2.5 15ZM13.75 16C14.3023 16 14.75 15.5523 14.75 15C14.75 14.4477 14.3023 14 13.75 14V16ZM6.71913 8.1253L1.71913 14.3753L3.28087 15.6247L8.28087 9.3747L6.71913 8.1253ZM1.71913 15.6247L6.71913 21.8747L8.28087 20.6253L3.28087 14.3753L1.71913 15.6247ZM2.5 16H13.75V14H2.5V16Z" fill="#0B0B0B"/>
+                            <path d="M12.5 10.1649V8.38851C12.5 6.77017 12.5 5.961 12.974 5.4015C13.4479 4.84201 14.2461 4.70899 15.8424 4.44293L20.5136 3.6644C23.7567 3.12388 25.3782 2.85363 26.4391 3.75232C27.5 4.65102 27.5 6.29493 27.5 9.58276V20.4172C27.5 23.7051 27.5 25.349 26.4391 26.2477C25.3782 27.1464 23.7567 26.8761 20.5136 26.3356L15.8424 25.5571C14.2461 25.291 13.4479 25.158 12.974 24.5985C12.5 24.039 12.5 23.2298 12.5 21.6115V20.0825" stroke="#0B0B0B" stroke-width="2"/>
+                        </svg>
+                        <a href="../forms/form_log.html">Выйти из аккаунта</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="mainSection content">
+                <div class="nameMain">Мои курсы
+                    <div class="palka"></div>
+                </div>
+                <div class="myCoursesList">
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="itemName">Теория вероятности и математических анализов</div>
+                        <div class="itemInfo">
+                            <div class="itemGroup"><span>Группа:</span>ИСиП-33</div>
+                            <div class="itemTeacher"><span>Преподаватель:</span>Лодчикова Лидия Тимуровна</div>
+                        </div>
+                    </div>
+
+                </div>
+        </section>
+    </main>
+</body>
+</html>
